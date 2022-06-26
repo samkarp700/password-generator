@@ -1,42 +1,16 @@
-//When prompted with password criteria, select which criteria to include in the password
-// when prompted for lenth, choose length of at least 8 characters, no longer than 128
-//when prompted for character types to include, then confirm lowercase, uppercase, numeric, and or special 
-//each answer is validated and at least 1 character type is selected
-//when all prompts answered, password is generated
-
 
 // Assignment code here
 
-//prompt lowercase letter
-var getRandomLower = function() {
-  return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+var characterLength = 8;
+var choiceArr = [];
 
-};
+var randomSymbols = [" ' !@#$%&^()*+,-./:;<=>?@[\]_`{|}~"];
+var randomLower = [String.fromCharCode(Math.floor(Math.random() * 26 + 97))];
+var randomUpper = [String.fromCharCode(Math.floor(Math.random() * 26 + 65 ))];
+var randomNumbers = [String.fromCharCode(Math.floor(Math.random() * 10 + 48))];
 
-//prompt uppercase letter
-var getRandomUpper = function() {
-  return String.fromCharCode(Math.floor(Math.random() * 26 + 65 ));
-};
 
-// prompt get random number
-var getRandomNumber = function() {
-  return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
-};
-
-// prompt random symbol
-var getRandomSymbols = function() {
-  const symbols= " ' !@#$%&^()*+,-./:;<=>?@[\]_`{|}~";
-  return symbols [Math.floor(Math.random() * symbols.length)];
-};
-
-// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-const resultEL = document.querySelector('result');
-const lengthEL = document.querySelector('result');
-const uppercaseEL = document.querySelector('result');
-const lowercaseEL = document.querySelector('result');
-const numbersEL = document.querySelector('result');
-const symbolsEL = document.querySelector('result');
 
 // Write password to the #password input
 function writePassword() {
@@ -49,3 +23,56 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function generatePassword() {
+  console.log("You clicked the button."); //not needed later 
+
+  // 1. Prompt the user for the password critera
+ 
+
+  
+  // lowercase, uppercase, numbers, special characters
+  // 2. validate the input
+  // 3. generate the password
+ 
+
+
+
+
+
+
+
+ // 4. display generated password on the page 
+  return "Generated password will go here!";
+}
+//prompt lowercase letter
+
+
+// Get references to the #generate element
+  //generate button
+
+
+function getPrompts() {
+  characterLength = prompt("How many characters do you want your password to be? (8-128 characters)");
+  if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) { //this should all be false
+      alert("Character length has to be one number between 8 - 128");
+      return false;
+  }
+
+  if (confirm("Would you like lowercase letters in your password?")) {
+    choiceArr = choiceArr.concat(randomLower);
+  }
+
+  if (confirm("Would you like uppercase letters in your password?")) {
+    choiceArr = choiceArr.concat(randomUpper);
+  }  
+  if (confirm("Would you like special characters letters in your password?")) {
+    choiceArr = choiceArr.concat(randomSymbols);
+} 
+if (confirm("Would you like special characters letters in your password?")) {
+  choiceArr = choiceArr.concat(randomNumbers);
+}
+};
+
+
+
