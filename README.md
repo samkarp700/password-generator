@@ -14,7 +14,7 @@ This password generator prompts the user on:
 
 The password generator has the ability to reset once the user clicks on the generator button. 
 
-Link to [password generator application:] (https://samkarp700.github.io/password-generator/)
+Link to Password Generator (https://samkarp700.github.io/password-generator/)
 
 ![Password-Generator](./assets/images/Screen%20Shot%202022-06-26%20at%205.09.07%20PM.png)
 
